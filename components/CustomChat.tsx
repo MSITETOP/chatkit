@@ -334,71 +334,82 @@ export function CustomChat() {
       {/* Header */}
       <div className="border-b border-slate-200 p-4 dark:border-slate-700">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowThreadList(!showThreadList)}
-              className="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              title="Show threads"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-              {threads[currentThreadIndex]?.title || "New Chat"}
-            </h2>
+          <div className="relative flex-1">
+            {/* Current thread title with icon controls */}
+            <div className="flex items-center gap-2">
+              <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100 flex-1 truncate">
+                {threads[currentThreadIndex]?.title || "New Chat"}
+              </h2>
+              
+              {/* Icon controls */}
+              <div className="flex items-center gap-1">
+                {/* New chat icon */}
+                <button
+                  onClick={createNewThread}
+                  className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  title="New chat"
+                >
+                  <svg className="w-5 h-5 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                  </svg>
+                </button>
+                
+                {/* History/dropdown icon */}
+                <button
+                  onClick={() => setShowThreadList(!showThreadList)}
+                  className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  title="Chat history"
+                >
+                  <svg className={`w-5 h-5 text-slate-600 dark:text-slate-400 transition-transform ${showThreadList ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Dropdown Thread List */}
+            {showThreadList && (
+              <div className="absolute top-full right-0 mt-2 w-80 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg z-20 max-h-96 overflow-y-auto">
+                {/* Thread List */}
+                {threads.map((thread, idx) => (
+                  <div
+                    key={thread.id}
+                    onClick={() => switchThread(idx)}
+                    className={`group relative px-4 py-3 cursor-pointer transition-colors border-b border-slate-200 dark:border-slate-700 last:border-b-0 ${
+                      idx === currentThreadIndex
+                        ? "bg-slate-100 dark:bg-slate-700"
+                        : "hover:bg-slate-50 dark:hover:bg-slate-750"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                          {thread.title}
+                        </p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400">
+                          {thread.messages.length} messages · {new Date(thread.updatedAt).toLocaleDateString()}
+                        </p>
+                      </div>
+                      <button
+                        onClick={(e) => deleteThread(idx, e)}
+                        className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 dark:hover:bg-red-900/50 rounded transition-all"
+                        title="Delete thread"
+                      >
+                        <svg className="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-          <button
-            onClick={createNewThread}
-            className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 transition-colors"
-            title="New chat"
-          >
-            + New Chat
-          </button>
         </div>
         {clientSecret && (
-          <p className="text-sm text-slate-500 mt-1">Session active</p>
+          <p className="text-sm text-slate-500 mt-2">Session active</p>
         )}
       </div>
-
-      {/* Thread List Sidebar */}
-      {showThreadList && (
-        <div className="absolute left-0 top-16 bottom-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 z-10 overflow-y-auto">
-          <div className="p-2">
-            {threads.map((thread, idx) => (
-              <div
-                key={thread.id}
-                onClick={() => switchThread(idx)}
-                className={`group relative p-3 mb-1 rounded-lg cursor-pointer transition-colors ${
-                  idx === currentThreadIndex
-                    ? "bg-slate-200 dark:bg-slate-800"
-                    : "hover:bg-slate-100 dark:hover:bg-slate-800"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                      {thread.title}
-                    </p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      {thread.messages.length} messages
-                    </p>
-                  </div>
-                  <button
-                    onClick={(e) => deleteThread(idx, e)}
-                    className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 dark:hover:bg-red-900 rounded transition-opacity"
-                    title="Delete thread"
-                  >
-                    <svg className="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4">
