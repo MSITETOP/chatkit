@@ -10,6 +10,15 @@ type Message = {
   id: string;
 };
 
+type Thread = {
+  id: string;
+  title: string;
+  threadId: string | null;
+  messages: Message[];
+  createdAt: number;
+  updatedAt: number;
+};
+
 export function CustomChat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -19,6 +28,64 @@ export function CustomChat() {
   const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  
+  // Thread management
+  const [threads, setThreads] = useState<Thread[]>([]);
+  const [currentThreadIndex, setCurrentThreadIndex] = useState(0);
+  const [showThreadList, setShowThreadList] = useState(false);
+
+  // Load threads from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("chat-threads");
+    if (saved) {
+      const loadedThreads = JSON.parse(saved) as Thread[];
+      setThreads(loadedThreads);
+      if (loadedThreads.length > 0) {
+        setMessages(loadedThreads[0].messages);
+        setThreadId(loadedThreads[0].threadId);
+      }
+    } else {
+      // Create initial thread
+      const initialThread: Thread = {
+        id: Date.now().toString(),
+        title: "New Chat",
+        threadId: null,
+        messages: [],
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      };
+      setThreads([initialThread]);
+    }
+  }, []);
+
+  // Save threads to localStorage whenever they change
+  useEffect(() => {
+    if (threads.length > 0) {
+      localStorage.setItem("chat-threads", JSON.stringify(threads));
+    }
+  }, [threads]);
+
+  // Update current thread when messages change
+  useEffect(() => {
+    if (threads.length > 0) {
+      setThreads((prev) =>
+        prev.map((thread, idx) =>
+          idx === currentThreadIndex
+            ? {
+                ...thread,
+                messages,
+                threadId,
+                updatedAt: Date.now(),
+                title:
+                  messages.length > 0 && thread.title === "New Chat"
+                    ? messages[0].content.slice(0, 50) + "..."
+                    : thread.title,
+              }
+            : thread
+        )
+      );
+    }
+  }, [messages, threadId, currentThreadIndex]);
 
   // Initialize session on mount
   useEffect(() => {
@@ -37,6 +104,59 @@ export function CustomChat() {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  const createNewThread = () => {
+    const newThread: Thread = {
+      id: Date.now().toString(),
+      title: "New Chat",
+      threadId: null,
+      messages: [],
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
+    };
+    setThreads((prev) => [newThread, ...prev]);
+    setCurrentThreadIndex(0);
+    setMessages([]);
+    setThreadId(null);
+    setShowThreadList(false);
+  };
+
+  const switchThread = (index: number) => {
+    setCurrentThreadIndex(index);
+    setMessages(threads[index].messages);
+    setThreadId(threads[index].threadId);
+    setShowThreadList(false);
+  };
+
+  const deleteThread = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (threads.length === 1) {
+      // Don't delete the last thread, just clear it
+      setMessages([]);
+      setThreadId(null);
+      setThreads([{
+        id: Date.now().toString(),
+        title: "New Chat",
+        threadId: null,
+        messages: [],
+        createdAt: Date.now(),
+        updatedAt: Date.now(),
+      }]);
+      return;
+    }
+    
+    setThreads((prev) => prev.filter((_, idx) => idx !== index));
+    if (currentThreadIndex >= index && currentThreadIndex > 0) {
+      const newIndex = currentThreadIndex - 1;
+      setCurrentThreadIndex(newIndex);
+      setMessages(threads[newIndex].messages);
+      setThreadId(threads[newIndex].threadId);
+    } else if (currentThreadIndex === index) {
+      setCurrentThreadIndex(0);
+      setMessages(threads[0].messages);
+      setThreadId(threads[0].threadId);
+    }
+  };
 
   const initSession = async () => {
     try {
@@ -213,13 +333,72 @@ export function CustomChat() {
     <div className="flex h-[90vh] w-full flex-col rounded-2xl bg-white shadow-sm dark:bg-slate-900">
       {/* Header */}
       <div className="border-b border-slate-200 p-4 dark:border-slate-700">
-        <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-          AI Assistant
-        </h2>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowThreadList(!showThreadList)}
+              className="rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              title="Show threads"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+              {threads[currentThreadIndex]?.title || "New Chat"}
+            </h2>
+          </div>
+          <button
+            onClick={createNewThread}
+            className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 transition-colors"
+            title="New chat"
+          >
+            + New Chat
+          </button>
+        </div>
         {clientSecret && (
-          <p className="text-sm text-slate-500">Session active</p>
+          <p className="text-sm text-slate-500 mt-1">Session active</p>
         )}
       </div>
+
+      {/* Thread List Sidebar */}
+      {showThreadList && (
+        <div className="absolute left-0 top-16 bottom-0 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 z-10 overflow-y-auto">
+          <div className="p-2">
+            {threads.map((thread, idx) => (
+              <div
+                key={thread.id}
+                onClick={() => switchThread(idx)}
+                className={`group relative p-3 mb-1 rounded-lg cursor-pointer transition-colors ${
+                  idx === currentThreadIndex
+                    ? "bg-slate-200 dark:bg-slate-800"
+                    : "hover:bg-slate-100 dark:hover:bg-slate-800"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                      {thread.title}
+                    </p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {thread.messages.length} messages
+                    </p>
+                  </div>
+                  <button
+                    onClick={(e) => deleteThread(idx, e)}
+                    className="opacity-0 group-hover:opacity-100 p-1 hover:bg-red-100 dark:hover:bg-red-900 rounded transition-opacity"
+                    title="Delete thread"
+                  >
+                    <svg className="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4">
