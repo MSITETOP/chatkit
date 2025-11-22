@@ -1,0 +1,1406 @@
+
+================================================================================
+[2025-11-22T10:10:34.748Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:34.749Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:34.726Z"
+}
+
+================================================================================
+[2025-11-22T10:10:35.766Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:35.736Z"
+}
+
+================================================================================
+[2025-11-22T10:10:35.766Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:36.940Z] WS MESSAGE (EARLY)
+{
+  "action": "sync",
+  "hash": "785eda2cff91e675",
+  "errors": [],
+  "warnings": [],
+  "versionInfo": {
+    "staleness": "stale-major",
+    "expected": "16.0.3",
+    "installed": "15.5.4"
+  },
+  "debug": {},
+  "devIndicator": {
+    "disabledUntil": 0
+  },
+  "devToolsConfig": {}
+}
+
+================================================================================
+[2025-11-22T10:10:36.941Z] WEBSOCKET MESSAGE
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "action": "sync",
+    "hash": "785eda2cff91e675",
+    "errors": [],
+    "warnings": [],
+    "versionInfo": {
+      "staleness": "stale-major",
+      "expected": "16.0.3",
+      "installed": "15.5.4"
+    },
+    "debug": {},
+    "devIndicator": {
+      "disabledUntil": 0
+    },
+    "devToolsConfig": {}
+  },
+  "rawData": "{\"action\":\"sync\",\"hash\":\"785eda2cff91e675\",\"errors\":[],\"warnings\":[],\"versionInfo\":{\"staleness\":\"stale-major\",\"expected\":\"16.0.3\",\"installed\":\"15.5.4\"},\"debug\":{},\"devIndicator\":{\"disabledUntil\":0},\"devToolsConfig\":{}}",
+  "timestamp": "2025-11-22T10:10:36.788Z"
+}
+
+================================================================================
+[2025-11-22T10:10:36.941Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "client-success",
+    "clientId": 1763806236829
+  },
+  "rawData": "{\"event\":\"client-success\",\"clientId\":1763806236829}",
+  "timestamp": "2025-11-22T10:10:36.789Z"
+}
+
+================================================================================
+[2025-11-22T10:10:36.941Z] WEBSOCKET CONNECTING
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "timestamp": "2025-11-22T10:10:36.776Z"
+}
+
+================================================================================
+[2025-11-22T10:10:36.941Z] WEBSOCKET OPEN
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "readyState": 1,
+  "timestamp": "2025-11-22T10:10:36.787Z"
+}
+
+================================================================================
+[2025-11-22T10:10:36.958Z] WS SEND (EARLY)
+{
+  "event": "client-success",
+  "clientId": 1763806236829
+}
+
+================================================================================
+[2025-11-22T10:10:36.966Z] WS MESSAGE (EARLY)
+{
+  "action": "isrManifest",
+  "data": {
+    "/": true
+  }
+}
+
+================================================================================
+[2025-11-22T10:10:36.966Z] WEBSOCKET MESSAGE
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "action": "isrManifest",
+    "data": {
+      "/": true
+    }
+  },
+  "rawData": "{\"action\":\"isrManifest\",\"data\":{\"/\":true}}",
+  "timestamp": "2025-11-22T10:10:36.791Z"
+}
+
+================================================================================
+[2025-11-22T10:10:36.966Z] FETCH REQUEST
+{
+  "url": "/api/create-session",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"workflow\":{\"id\":\"wf_691a06f155508190ae23ffd93ab4dc500332408bc964b52c\"},\"chatkit_configuration\":{\"file_upload\":{\"enabled\":true}}}",
+  "timestamp": "2025-11-22T10:10:36.900Z"
+}
+
+================================================================================
+[2025-11-22T10:10:37.433Z] FETCH RESPONSE
+{
+  "url": "/api/create-session",
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "connection": "keep-alive",
+    "content-type": "application/json",
+    "date": "Sat, 22 Nov 2025 10:10:37 GMT",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked"
+  },
+  "body": {
+    "client_secret": "ek_69218c1d43c08190902a7a72f2bc6c1a0928f89270ab2db1_00eyJleHBpcmVzX2F0IjogMTc2MzgwNjgzN30=",
+    "expires_after": null
+  },
+  "duration": "521ms",
+  "timestamp": "2025-11-22T10:10:37.421Z"
+}
+
+================================================================================
+[2025-11-22T10:10:37.433Z] FETCH RESPONSE (EARLY)
+undefined
+
+================================================================================
+[2025-11-22T10:10:39.313Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:39.279Z"
+}
+
+================================================================================
+[2025-11-22T10:10:39.314Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:41.803Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:41.804Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:41.780Z"
+}
+
+================================================================================
+[2025-11-22T10:10:44.305Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:44.280Z"
+}
+
+================================================================================
+[2025-11-22T10:10:44.305Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:46.814Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:46.814Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:46.780Z"
+}
+
+================================================================================
+[2025-11-22T10:10:49.309Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:49.309Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:49.281Z"
+}
+
+================================================================================
+[2025-11-22T10:10:51.798Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:51.798Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:51.781Z"
+}
+
+================================================================================
+[2025-11-22T10:10:55.017Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:55.017Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:54.989Z"
+}
+
+================================================================================
+[2025-11-22T10:10:57.015Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:10:57.015Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:56.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:00.003Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:00.003Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:10:59.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:02.018Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:01.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:02.019Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:05.002Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:04.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:05.002Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:07.005Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:07.005Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:06.988Z"
+}
+
+================================================================================
+[2025-11-22T10:11:10.015Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:10.015Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:09.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:12.010Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:12.010Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:11.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:15.012Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:14.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:15.012Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:17.011Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:16.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:17.011Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:20.015Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:20.015Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:19.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:22.003Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:22.003Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:21.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:25.012Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:24.990Z"
+}
+
+================================================================================
+[2025-11-22T10:11:25.012Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:27.019Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:26.990Z"
+}
+
+================================================================================
+[2025-11-22T10:11:27.019Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:30.012Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:29.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:30.012Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:31.998Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:31.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:31.998Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:35.018Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:35.019Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:34.990Z"
+}
+
+================================================================================
+[2025-11-22T10:11:36.997Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
+
+================================================================================
+[2025-11-22T10:11:36.997Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:36.989Z"
+}
+
+================================================================================
+[2025-11-22T10:11:40.011Z] WEBSOCKET SEND
+{
+  "url": "ws://localhost:3001/_next/webpack-hmr",
+  "data": {
+    "event": "ping",
+    "tree": [
+      "",
+      {
+        "children": [
+          "__PAGE__",
+          {},
+          "/",
+          "refresh"
+        ]
+      },
+      null,
+      null,
+      true
+    ],
+    "appDirRoute": true
+  },
+  "rawData": "{\"event\":\"ping\",\"tree\":[\"\",{\"children\":[\"__PAGE__\",{},\"/\",\"refresh\"]},null,null,true],\"appDirRoute\":true}",
+  "timestamp": "2025-11-22T10:11:39.990Z"
+}
+
+================================================================================
+[2025-11-22T10:11:40.011Z] WS SEND (EARLY)
+{
+  "event": "ping",
+  "tree": [
+    "",
+    {
+      "children": [
+        "__PAGE__",
+        {},
+        "/",
+        "refresh"
+      ]
+    },
+    null,
+    null,
+    true
+  ],
+  "appDirRoute": true
+}
