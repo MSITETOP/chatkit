@@ -42,7 +42,7 @@ export async function GET(
     const contentType = response.headers.get("content-type") || "application/octet-stream";
     
     // Clone response to read body
-    let body = await response.arrayBuffer();
+    let body: ArrayBuffer | Uint8Array = await response.arrayBuffer();
     
     // If this is chatkit.js, we need to patch it to use our proxy
     if (fullPath.includes('chatkit.js') || fullPath.includes('chatkit/index-')) {
