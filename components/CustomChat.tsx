@@ -85,7 +85,7 @@ export function CustomChat() {
         )
       );
     }
-  }, [messages, threadId, currentThreadIndex]);
+  }, [messages, threadId, currentThreadIndex, threads.length]);
 
   // Initialize session on mount
   useEffect(() => {
@@ -226,7 +226,7 @@ export function CustomChat() {
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
       let assistantMessage = "";
-      let assistantId = Date.now().toString();
+      const assistantId = Date.now().toString();
       let newThreadId: string | null = null;
 
       if (reader) {
@@ -445,7 +445,7 @@ export function CustomChat() {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       // Customize code blocks
-                      code: ({ node, className, children, ...props }) => {
+                      code: ({ className, children, ...props }) => {
                         const match = /language-(\w+)/.exec(className || "");
                         const codeString = String(children).replace(/\n$/, "");
                         const [copied, setCopied] = useState(false);
@@ -482,7 +482,7 @@ export function CustomChat() {
                         );
                       },
                       // Customize links
-                      a: ({ node, ...props }) => (
+                      a: ({ ...props }) => (
                         <a
                           className="text-blue-600 dark:text-blue-400 hover:underline"
                           target="_blank"
@@ -491,7 +491,7 @@ export function CustomChat() {
                         />
                       ),
                       // Customize pre blocks
-                      pre: ({ node, ...props }) => (
+                      pre: ({ ...props }) => (
                         <pre
                           className="bg-slate-900 dark:bg-slate-950 p-0 rounded overflow-hidden"
                           {...props}
