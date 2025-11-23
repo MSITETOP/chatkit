@@ -19,6 +19,48 @@ type Thread = {
   updatedAt: number;
 };
 
+// Separate component for code blocks to properly use hooks
+function CodeBlock({ className, children, ...props }: { className?: string; children?: React.ReactNode }) {
+  const match = /language-(\w+)/.exec(className || "");
+  const codeString = String(children).replace(/\n$/, "");
+  const [copied, setCopied] = useState(false);
+  
+  const handleCopy = () => {
+    navigator.clipboard.writeText(codeString);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  
+  if (match) {
+    return (
+      <div className="relative group">
+        <button
+          onClick={handleCopy}
+          className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded text-xs"
+          title="Copy code"
+        >
+          {copied ? "Copied!" : "Copy"}
+        </button>
+        <code
+          className={`${className} block bg-slate-900 text-slate-100 dark:bg-slate-950 p-3 pr-16 rounded text-sm overflow-x-auto`}
+          {...props}
+        >
+          {children}
+        </code>
+      </div>
+    );
+  }
+  
+  return (
+    <code
+      className="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-sm"
+      {...props}
+    >
+      {children}
+    </code>
+  );
+}
+
 export function CustomChat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -445,42 +487,7 @@ export function CustomChat() {
                     remarkPlugins={[remarkGfm]}
                     components={{
                       // Customize code blocks
-                      code: ({ className, children, ...props }) => {
-                        const match = /language-(\w+)/.exec(className || "");
-                        const codeString = String(children).replace(/\n$/, "");
-                        const [copied, setCopied] = useState(false);
-                        
-                        const handleCopy = () => {
-                          navigator.clipboard.writeText(codeString);
-                          setCopied(true);
-                          setTimeout(() => setCopied(false), 2000);
-                        };
-                        
-                        return match ? (
-                          <div className="relative group">
-                            <button
-                              onClick={handleCopy}
-                              className="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity bg-slate-700 hover:bg-slate-600 text-white px-2 py-1 rounded text-xs"
-                              title="Copy code"
-                            >
-                              {copied ? "Copied!" : "Copy"}
-                            </button>
-                            <code
-                              className={`${className} block bg-slate-900 text-slate-100 dark:bg-slate-950 p-3 pr-16 rounded text-sm overflow-x-auto`}
-                              {...props}
-                            >
-                              {children}
-                            </code>
-                          </div>
-                        ) : (
-                          <code
-                            className="bg-slate-200 dark:bg-slate-700 px-1 py-0.5 rounded text-sm"
-                            {...props}
-                          >
-                            {children}
-                          </code>
-                        );
-                      },
+                      code: CodeBlock,
                       // Customize links
                       a: ({ ...props }) => (
                         <a
