@@ -42,7 +42,7 @@ export async function GET(
     const contentType = response.headers.get("content-type") || "application/octet-stream";
     
     // Clone response to read body
-    let body: ArrayBuffer | Uint8Array = await response.arrayBuffer();
+    let body: ArrayBuffer = await response.arrayBuffer();
     
     // If this is chatkit.js, we need to patch it to use our proxy
     if (fullPath.includes('chatkit.js') || fullPath.includes('chatkit/index-')) {
@@ -62,7 +62,11 @@ export async function GET(
         '/api/proxy/chatkit'
       );
       
-      body = new TextEncoder().encode(content);
+      // Convert Uint8Array to ArrayBuffer
+      const encoded = new TextEncoder().encode(content);
+      body = encoded.buffer instanceof ArrayBuffer 
+        ? encoded.buffer.slice(encoded.byteOffset, encoded.byteOffset + encoded.byteLength)
+        : new Uint8Array(encoded).buffer;
       console.log("[ChatKit Proxy] Patched URLs in", fullPath);
     }
     
